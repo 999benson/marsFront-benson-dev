@@ -1,0 +1,24 @@
+body{
+    background-color: rgb(9, 0, 34);
+  
+    
+  }
+
+.Home{
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.vid1{
+    padding-top: 5%;
+    display: flex;
+    margin: auto;
+}
+
+.inHome{
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 5%;
+}

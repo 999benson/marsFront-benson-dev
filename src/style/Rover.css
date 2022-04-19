@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(9, 0, 34);
+  
+  }
+
+/* .Home{
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+} */
+
+.vid1{
+    padding-top: 5%;
+    display: flex;
+    margin: auto;
+}
+
+.Opportunity{
+    padding-left: 15%;
+    padding-right: 15%;
+}
+

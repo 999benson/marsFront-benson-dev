@@ -1,0 +1,11 @@
+.container{
+    width:60%
+}
+
+.content{
+    padding-top: 5%;
+    color:white;
+    font-size: larger;
+    line-height: 1.8;
+    padding-bottom: 5%;
+}

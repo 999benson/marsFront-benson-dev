@@ -1,0 +1,53 @@
+
+.imgs{
+    width:100%;
+    min-width: auto;
+    height:70%;
+    object-fit:cover ;
+    border-radius: 2%;
+}
+
+/* .imgRender{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+} */
+
+#cardimage{
+   margin: 3%;
+   width: 800px;
+   background-color: rgb(9, 0, 34);
+     
+}
+
+.card-body{
+    padding: 5px;
+    font-family: 'Akshar', sans-serif;
+    font-size: large;
+}
+
+.card-title{
+  font-size:x-large;
+}
+
+.cardlink{
+    padding-left: 5%;
+}
+
+.card-text{
+    padding-top:2%
+}
+
+
+.heart:hover{
+    transform: scale(1.25);
+    transition: all ease 1s;
+}
+
+  @media all and (max-width:1198px) {
+    #cardGroup{
+      display: flex;
+      flex-direction: column;
+    }
+  }
