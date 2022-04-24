@@ -6,9 +6,9 @@ import "../style/Home.css";
 import Fave from "./Fave";
 import PropTypes from "prop-types";
 
-const Home = ({ imgs , faveIdToImage, setFaveIdToImage}) => {
+const Home = ({ imgs, faveIdToImage, setFaveIdToImage }) => {
   // const [faveList, setFaveList] = useState([]);
-  console.log(faveIdToImage)
+  console.log("faveIDTOIMAGE", faveIdToImage);
 
   /**
    * Function that adds and removes favorited rover images
@@ -25,23 +25,28 @@ const Home = ({ imgs , faveIdToImage, setFaveIdToImage}) => {
   // };
 
   const addFave = (obj) => {
-    const tempMap = new Map(faveIdToImage)
-    tempMap.set(obj.id, Object.assign({}, obj))
+    const tempMap = new Map(faveIdToImage);
+    tempMap.set(obj.id, Object.assign({}, obj));
     setFaveIdToImage(tempMap);
   };
   const removeFave = (obj) => {
-    const tempMap = new Map(faveIdToImage)
+    const tempMap = new Map(faveIdToImage);
     tempMap.delete(obj.id);
     setFaveIdToImage(tempMap);
   };
   // console.log("HOME FAVELIST", faveList);
-  
+
   return (
     <div className="Home">
       <div className="container">
         <div className="inHome">
           <div className=""></div>
-          <RenderImg addFave={addFave} removeFave={removeFave} imgs={imgs} faveIdToImage= {faveIdToImage}/>
+          <RenderImg
+            addFave={addFave}
+            removeFave={removeFave}
+            imgs={imgs}
+            faveIdToImage={faveIdToImage}
+          />
           <Fave faveIdToImage={faveIdToImage} />
         </div>
       </div>
@@ -52,6 +57,6 @@ const Home = ({ imgs , faveIdToImage, setFaveIdToImage}) => {
 Home.propTypes = {
   imgs: PropTypes.array.isRequired,
   faveIdToImage: PropTypes.any.isRequired,
-  setFaveIdToImage: PropTypes.func.isRequired
+  setFaveIdToImage: PropTypes.func.isRequired,
 };
 export default Home;

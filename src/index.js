@@ -11,9 +11,9 @@ import Main from "./pages/Main";
 import Spirit from "./components/Spirit";
 import Curiosity from "./components/Curiosity";
 import Landing from "./pages/Landing";
-
 // import Fave from "./pages/Fave";
-// import Home from "./pages/Home";
+
+import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,7 +23,7 @@ root.render(
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/Home" element={<Main />} />
-        <Route path="/MyFavorites" element={<Main />} />
+        <Route path="/MyFavorites" element={<Home />} />
         <Route path="/Opportunity" element={<Opportunity />} />
         <Route path="/Curiosity" element={<Curiosity />} />
         <Route path="/Spirit" element={<Spirit />} />

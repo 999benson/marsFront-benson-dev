@@ -7,10 +7,12 @@ const Navbar = ({ handleSubmit }) => {
   return (
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light ">
-        <div className="container-fluid">
-          <a className="navbar-brand" id="navbar-brand">
-            Mars Roverland
-          </a>
+        <div className="container">
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <p className="navbar-brand" id="navbar-brand">
+              Mars Roverland
+            </p>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

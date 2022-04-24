@@ -15,7 +15,9 @@ export default function Mars() {
     <mesh
       ref={myMesh}
       onClick={() => (
-        <Link to="/Home" style={{ textDecoration: "none" }}></Link>
+        <Link to="/Home" style={{ textDecoration: "none" }}>
+          Enter
+        </Link>
       )}
     >
       <sphereBufferGeometry args={[2, 32, 32]} attach="geometry" />

@@ -17,7 +17,8 @@
 }
 
 .navbar-brand{
-    padding-left: 3%; 
+    padding-top: 8px;
+    /* padding-left: 3%;  */
 }
 
 #navbar-brand{
@@ -25,6 +26,7 @@
     font-size: x-large;
     font-family: 'Akshar', sans-serif;
     font-weight: bold;
+    
     
 }
 
