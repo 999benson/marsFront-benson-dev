@@ -10,6 +10,7 @@ import Opportunity from "./components/Opportunity";
 import Main from "./pages/Main";
 import Spirit from "./components/Spirit";
 import Curiosity from "./components/Curiosity";
+
 // import Fave from "./pages/Fave";
 // import Home from "./pages/Home";
 
@@ -21,10 +22,10 @@ root.render(
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/MyFavorites" element={<Main />} />
-        <Route path="/Account" element={<UserAccount />} />
         <Route path="/Opportunity" element={<Opportunity />} />
         <Route path="/Curiosity" element={<Curiosity />} />
         <Route path="/Spirit" element={<Spirit />} />
+        <Route path="/Login" element={<UserAccount />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

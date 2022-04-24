@@ -62,7 +62,9 @@ const Navbar = ({ handleSubmit }) => {
             </ul>
           </div>
           <div className="btn-login">
-            <button className="main-btn"> Log In </button>
+            <Link to="/Login" style={{ textDecoration: "none" }}>
+              <button className="main-btn"> Log In </button>
+            </Link>
           </div>
         </div>
       </nav>
