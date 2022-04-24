@@ -25,7 +25,7 @@ const Navbar = ({ handleSubmit }) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" style={{ textDecoration: "none" }}>
+                <Link to="/Home" style={{ textDecoration: "none" }}>
                   <p className="nav-link" id="home" onClick={handleSubmit}>
                     Home
                   </p>

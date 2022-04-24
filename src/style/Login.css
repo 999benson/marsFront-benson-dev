@@ -103,7 +103,7 @@
 }
 
 .drop {
-  background: rgba(160, 219, 249, 0.443);
+  background: rgba(215, 160, 249, 0.443);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   border-left: 1px solid rgba(255, 255, 255, 0.3);
