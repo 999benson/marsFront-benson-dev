@@ -1,35 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Home from "./pages/Home";
-import UserAccount from "./pages/UserAccount";
-import Opportunity from "./components/Opportunity";
-import Main from "./pages/Main";
-import Spirit from "./components/Spirit";
-import Curiosity from "./components/Curiosity";
-import Landing from "./pages/Landing";
-// import Fave from "./pages/Fave";
-
-import Home from "./pages/Home";
+import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/Home" element={<Main />} />
-        <Route path="/MyFavorites" element={<Home />} />
-        <Route path="/Opportunity" element={<Opportunity />} />
-        <Route path="/Curiosity" element={<Curiosity />} />
-        <Route path="/Spirit" element={<Spirit />} />
-        <Route path="/Login" element={<UserAccount />} />
-      </Routes>
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );
 

@@ -3,10 +3,18 @@ import React, { useState, useEffect } from "react";
 import Filter from "./Filter";
 import axios from "axios";
 import Home from "./Home";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
+import PropTypes from "prop-types";
+// import { useLocation } from "react-router-dom";
 
-function Main() {
-  const [faveIdToImage, setFaveIdToImage] = useState(new Map());
+function Main({ faveIdToImage, setFaveIdToImage }) {
+  // let locat = useLocation();
+  // console.log(locat);
+  // const [faveIdToImage, setFaveIdToImage] = useState(
+  //   locat.state["faveIdToImage"]
+  // );
+
+  // console.log("Print faveIdToImage in Main", locat);
   const [roverToImage, setRoverToImage] = useState(
     new Map([
       ["curiosity", []],
@@ -102,6 +110,7 @@ function Main() {
    */
   const handleSubmitData = (e) => {
     e.preventDefault();
+    setSubmit(false);
 
     if (e.target.sol.value <= 0) {
       setSolDay(solDay);
@@ -153,35 +162,35 @@ function Main() {
     console.log("Submitted values", camera);
   };
 
-  /**
-   * When "Home" of navbar gets clicked, toggle the rendering of the page
-   * and reset roverToCamera selection and reset Rover selection buttons
-   */
-  const handleSubmit = () => {
-    //toggle rendering
-    setSubmit(false);
-    //reset roverToCamera selection
-    setRoverToCamera(
-      new Map([
-        ["curiosity", []],
-        ["opportunity", []],
-        ["spirit", []],
-      ])
-    );
+  // /**
+  //  * When "Home" of navbar gets clicked, toggle the rendering of the page
+  //  * and reset roverToCamera selection and reset Rover selection buttons
+  //  */
+  // const handleSubmit = () => {
+  //   //toggle rendering
+  //   setSubmit(false);
+  //   //reset roverToCamera selection
+  //   setRoverToCamera(
+  //     new Map([
+  //       ["curiosity", []],
+  //       ["opportunity", []],
+  //       ["spirit", []],
+  //     ])
+  //   );
 
-    setRoverToImage(
-      new Map([
-        ["curiosity", []],
-        ["opportunity", []],
-        ["spirit", []],
-      ])
-    );
+  //   setRoverToImage(
+  //     new Map([
+  //       ["curiosity", []],
+  //       ["opportunity", []],
+  //       ["spirit", []],
+  //     ])
+  //   );
 
-    //toggle button (reset)
-    setCButtonActive(false);
-    setOButtonActive(false);
-    setSButtonActive(false);
-  };
+  //   //toggle button (reset)
+  //   setCButtonActive(false);
+  //   setOButtonActive(false);
+  //   setSButtonActive(false);
+  // };
 
   /** handle button functions toggle button activation when Rovers are selected or deselected */
   const handleCButton = () => {
@@ -199,9 +208,13 @@ function Main() {
   //functions passed as props to children components
   return (
     <div className="Main">
-      <Navbar handleSubmit={handleSubmit} />
+      {/* <Navbar handleSubmit={handleSubmit} faveIdToImage={faveIdToImage} /> */}
       {submit ? (
-        <Home imgs={imgs} faveIdToImage={faveIdToImage} setFaveIdToImage={setFaveIdToImage} />
+        <Home
+          imgs={imgs}
+          faveIdToImage={faveIdToImage}
+          setFaveIdToImage={setFaveIdToImage}
+        />
       ) : (
         <Filter
           imgs={imgs}
@@ -219,5 +232,8 @@ function Main() {
     </div>
   );
 }
-
+Main.propTypes = {
+  faveIdToImage: PropTypes.any.isRequired,
+  setFaveIdToImage: PropTypes.any,
+};
 export default Main;

@@ -3,7 +3,10 @@ import "../style/Navbar.css";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-const Navbar = ({ handleSubmit }) => {
+const Navbar = ({ faveIdToImage, setFaveIdToImage, handleSubmit }) => {
+  // const [faveIdToImage, setFaveIdToImage] = useState(new Map());
+  console.log(faveIdToImage, setFaveIdToImage);
+
   return (
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light ">
@@ -76,5 +79,7 @@ const Navbar = ({ handleSubmit }) => {
 
 Navbar.propTypes = {
   handleSubmit: PropTypes.func,
+  faveIdToImage: PropTypes.any,
+  setFaveIdToImage: PropTypes.any,
 };
 export default Navbar;

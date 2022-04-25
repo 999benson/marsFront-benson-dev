@@ -5,10 +5,10 @@ import RenderImg from "../components/RenderImg";
 import "../style/Home.css";
 import Fave from "./Fave";
 import PropTypes from "prop-types";
+import { useLocation } from "react-router-dom";
 
 const Home = ({ imgs, faveIdToImage, setFaveIdToImage }) => {
   // const [faveList, setFaveList] = useState([]);
-  console.log("faveIDTOIMAGE", faveIdToImage);
 
   /**
    * Function that adds and removes favorited rover images
@@ -28,6 +28,7 @@ const Home = ({ imgs, faveIdToImage, setFaveIdToImage }) => {
     const tempMap = new Map(faveIdToImage);
     tempMap.set(obj.id, Object.assign({}, obj));
     setFaveIdToImage(tempMap);
+    console.log("added", faveIdToImage);
   };
   const removeFave = (obj) => {
     const tempMap = new Map(faveIdToImage);
@@ -47,7 +48,7 @@ const Home = ({ imgs, faveIdToImage, setFaveIdToImage }) => {
             imgs={imgs}
             faveIdToImage={faveIdToImage}
           />
-          <Fave faveIdToImage={faveIdToImage} />
+          {/* <Fave faveIdToImage={faveIdToImage} /> */}
         </div>
       </div>
     </div>

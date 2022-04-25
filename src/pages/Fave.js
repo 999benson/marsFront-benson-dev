@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../style/Render.css";
+// import { useLocation } from "react-router-dom";
 
-function Fave({ faveIdToImage }) {
-  console.log(faveIdToImage);
-  const imagesArr = Array.from(faveIdToImage.values())
-  console.log(imagesArr);
+function Fave({ faveIdToImage, setFaveIdToImage }) {
+  // let location = useLocation();
+  console.log("location in fav", setFaveIdToImage);
+  // let faveIdToImage = location.state["faveIdToImage"];
+  const imagesArr = Array.from(faveIdToImage.values());
+  console.log("ImagesARR", imagesArr);
   return (
     <div className="Fave">
       <div className="card-group " id="cardGroup">
@@ -34,5 +37,6 @@ function Fave({ faveIdToImage }) {
 
 Fave.propTypes = {
   faveIdToImage: PropTypes.any.isRequired,
+  setFaveIdToImage: PropTypes.any,
 };
 export default Fave;

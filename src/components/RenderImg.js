@@ -3,10 +3,8 @@ import "../style/Render.css";
 import { RiHeartLine, RiHeartFill } from "react-icons/ri";
 import PropTypes from "prop-types";
 
-function RenderImg({ addFave, removeFave, imgs ,faveIdToImage}) {
-  console.log(faveIdToImage)
+function RenderImg({ addFave, removeFave, imgs, faveIdToImage }) {
   // const [heart, setHeart] = useState(new Map());
-
   // useEffect(() => {
   //   const initialIds = new Map();
   //   imgs.forEach((element) => {
@@ -21,13 +19,15 @@ function RenderImg({ addFave, removeFave, imgs ,faveIdToImage}) {
    * function that renders heart icon
    * @returns heart icon in conditional rendering
    */
-   function renderHeart(_pic) {
+  function renderHeart(_pic) {
+    // let history = useHistory();
+    // console.log("History.pop", history.pop);
     return (
       <a
         className="hearbtn"
         onClick={() => {
-          faveIdToImage.get(_pic.id)? removeFave(_pic) : addFave(_pic);
-          
+          // history.push(_pic.id);
+          faveIdToImage.get(_pic.id) ? removeFave(_pic) : addFave(_pic);
         }}
       >
         {faveIdToImage.get(_pic.id) ? (
@@ -86,7 +86,6 @@ function RenderImg({ addFave, removeFave, imgs ,faveIdToImage}) {
 }
 
 RenderImg.propTypes = {
-
   faveIdToImage: PropTypes.any.isRequired,
   removeFave: PropTypes.any.isRequired,
   addFave: PropTypes.any.isRequired,
