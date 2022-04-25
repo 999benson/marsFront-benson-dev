@@ -162,36 +162,6 @@ function Main({ faveIdToImage, setFaveIdToImage }) {
     console.log("Submitted values", camera);
   };
 
-  // /**
-  //  * When "Home" of navbar gets clicked, toggle the rendering of the page
-  //  * and reset roverToCamera selection and reset Rover selection buttons
-  //  */
-  // const handleSubmit = () => {
-  //   //toggle rendering
-  //   setSubmit(false);
-  //   //reset roverToCamera selection
-  //   setRoverToCamera(
-  //     new Map([
-  //       ["curiosity", []],
-  //       ["opportunity", []],
-  //       ["spirit", []],
-  //     ])
-  //   );
-
-  //   setRoverToImage(
-  //     new Map([
-  //       ["curiosity", []],
-  //       ["opportunity", []],
-  //       ["spirit", []],
-  //     ])
-  //   );
-
-  //   //toggle button (reset)
-  //   setCButtonActive(false);
-  //   setOButtonActive(false);
-  //   setSButtonActive(false);
-  // };
-
   /** handle button functions toggle button activation when Rovers are selected or deselected */
   const handleCButton = () => {
     isCButtonActive ? setCButtonActive(false) : setCButtonActive(true);

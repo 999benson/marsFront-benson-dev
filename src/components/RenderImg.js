@@ -4,17 +4,6 @@ import { RiHeartLine, RiHeartFill } from "react-icons/ri";
 import PropTypes from "prop-types";
 
 function RenderImg({ addFave, removeFave, imgs, faveIdToImage }) {
-  // const [heart, setHeart] = useState(new Map());
-  // useEffect(() => {
-  //   const initialIds = new Map();
-  //   imgs.forEach((element) => {
-  //     initialIds.set(element.id, false);
-  //   });
-
-  //   setHeart(initialIds);
-  // }, [imgs]);
-  // console.log(":31 heart", heart);
-
   /**
    * function that renders heart icon
    * @returns heart icon in conditional rendering

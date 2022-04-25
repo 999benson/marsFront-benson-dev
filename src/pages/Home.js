@@ -8,22 +8,6 @@ import PropTypes from "prop-types";
 import { useLocation } from "react-router-dom";
 
 const Home = ({ imgs, faveIdToImage, setFaveIdToImage }) => {
-  // const [faveList, setFaveList] = useState([]);
-
-  /**
-   * Function that adds and removes favorited rover images
-   * @param {*} obj takes object that is clicked
-   * @param {*} heartMap takes the hash map of "heart"
-   */
-  // const addFave = (obj, heartMap) => {
-  //   if (heartMap.get(obj.id)) {
-  //     setFaveList([...faveList].concat(obj));
-  //   } else {
-  //     setFaveList(faveList.filter((i) => i.id !== obj.id));
-  //   }
-  //   console.log("FaveList in Home", faveList);
-  // };
-
   const addFave = (obj) => {
     const tempMap = new Map(faveIdToImage);
     tempMap.set(obj.id, Object.assign({}, obj));
