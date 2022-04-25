@@ -13,6 +13,19 @@ import Fave from "./pages/Fave";
 
 function App() {
   let [faveIdToImage, setFaveIdToImage] = useState(new Map());
+
+  const addFave = (obj) => {
+    const tempMap = new Map(faveIdToImage);
+    tempMap.set(obj.id, Object.assign({}, obj));
+    setFaveIdToImage(tempMap);
+    console.log("added", faveIdToImage);
+  };
+  const removeFave = (obj) => {
+    const tempMap = new Map(faveIdToImage);
+    tempMap.delete(obj.id);
+    setFaveIdToImage(tempMap);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,6 +41,8 @@ function App() {
               <Main
                 faveIdToImage={faveIdToImage}
                 setFaveIdToImage={setFaveIdToImage}
+                addFave={addFave}
+                removeFave={removeFave}
               />
             }
           />
@@ -37,6 +52,8 @@ function App() {
               <Fave
                 faveIdToImage={faveIdToImage}
                 setFaveIdToImage={setFaveIdToImage}
+                addFave={addFave}
+                removeFave={removeFave}
               />
             }
           />

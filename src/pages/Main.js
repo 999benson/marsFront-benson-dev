@@ -7,7 +7,7 @@ import Home from "./Home";
 import PropTypes from "prop-types";
 // import { useLocation } from "react-router-dom";
 
-function Main({ faveIdToImage, setFaveIdToImage }) {
+function Main({ faveIdToImage, setFaveIdToImage, addFave, removeFave }) {
   // let locat = useLocation();
   // console.log(locat);
   // const [faveIdToImage, setFaveIdToImage] = useState(
@@ -184,6 +184,8 @@ function Main({ faveIdToImage, setFaveIdToImage }) {
           imgs={imgs}
           faveIdToImage={faveIdToImage}
           setFaveIdToImage={setFaveIdToImage}
+          addFave={addFave}
+          removeFave={removeFave}
         />
       ) : (
         <Filter
@@ -205,5 +207,7 @@ function Main({ faveIdToImage, setFaveIdToImage }) {
 Main.propTypes = {
   faveIdToImage: PropTypes.any.isRequired,
   setFaveIdToImage: PropTypes.any,
+  addFave: PropTypes.any,
+  removeFave: PropTypes.any,
 };
 export default Main;

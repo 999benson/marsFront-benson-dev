@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "../style/Render.css";
+import { RiHeartLine, RiHeartFill } from "react-icons/ri";
 // import { useLocation } from "react-router-dom";
 
-function Fave({ faveIdToImage, setFaveIdToImage }) {
+function Fave({ faveIdToImage, setFaveIdToImage, addFave, removeFave }) {
   // let location = useLocation();
   console.log("location in fav", setFaveIdToImage);
   // let faveIdToImage = location.state["faveIdToImage"];
@@ -26,9 +27,32 @@ function Fave({ faveIdToImage, setFaveIdToImage }) {
   // }
   // let imagePairs = display(2, imagesArr);
 
+  /**
+   * function that renders heart icon
+   * @returns heart icon in conditional rendering
+   */
+  function renderHeart(_pic) {
+    // let history = useHistory();
+    // console.log("History.pop", history.pop);
+    return (
+      <a
+        className="hearbtn"
+        onClick={() => {
+          // history.push(_pic.id);
+          faveIdToImage.get(_pic.id) ? removeFave(_pic) : addFave(_pic);
+        }}
+      >
+        {faveIdToImage.get(_pic.id) ? (
+          <RiHeartFill className="heart" size={30} style={{ color: "red" }} />
+        ) : (
+          <RiHeartLine className="heart" size={30} style={{ color: "red" }} />
+        )}
+      </a>
+    );
+  }
+
   return (
     <div className="Fave">
-      <h1 className="fave-heading">My Favorites</h1>
       <div className="card-group " id="cardGroupFave">
         {imagesArr.map((roverpic) => (
           <div className="card container" id="cardimage" key={roverpic.id}>
@@ -44,7 +68,7 @@ function Fave({ faveIdToImage, setFaveIdToImage }) {
                 <br />
                 Status: {roverpic.rover.status}
               </p>
-              <div className="cardlink">YES</div>
+              <div className="cardlink">{renderHeart(roverpic)}</div>
             </div>
           </div>
         ))}
@@ -55,6 +79,8 @@ function Fave({ faveIdToImage, setFaveIdToImage }) {
 
 Fave.propTypes = {
   faveIdToImage: PropTypes.any.isRequired,
+  addFave: PropTypes.any.isRequired,
+  removeFave: PropTypes.any.isRequired,
   setFaveIdToImage: PropTypes.any,
 };
 export default Fave;
