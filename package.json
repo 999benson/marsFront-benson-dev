@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-spring/three": "^9.4.4",
     "@react-three/drei": "^9.5.3",
     "@react-three/fiber": "^8.0.12",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.26.1",
+    "cypress": "^9.6.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
@@ -20,7 +22,7 @@
   "scripts": {
     "start": "PORT=9080 react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "cypress open ",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

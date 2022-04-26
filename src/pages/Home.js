@@ -14,19 +14,6 @@ const Home = ({
   addFave,
   removeFave,
 }) => {
-  // const addFave = (obj) => {
-  //   const tempMap = new Map(faveIdToImage);
-  //   tempMap.set(obj.id, Object.assign({}, obj));
-  //   setFaveIdToImage(tempMap);
-  //   console.log("added", faveIdToImage);
-  // };
-  // const removeFave = (obj) => {
-  //   const tempMap = new Map(faveIdToImage);
-  //   tempMap.delete(obj.id);
-  //   setFaveIdToImage(tempMap);
-  // };
-  // console.log("HOME FAVELIST", faveList);
-
   return (
     <div className="Home">
       <div className="container">

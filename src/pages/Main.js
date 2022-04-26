@@ -15,6 +15,7 @@ function Main({ faveIdToImage, setFaveIdToImage, addFave, removeFave }) {
   // );
 
   // console.log("Print faveIdToImage in Main", locat);
+
   const [roverToImage, setRoverToImage] = useState(
     new Map([
       ["curiosity", []],
@@ -43,7 +44,7 @@ function Main({ faveIdToImage, setFaveIdToImage, addFave, removeFave }) {
   );
 
   const [solDay, setSolDay] = useState(1000);
-  console.log(solDay);
+
   /**
    * function that gets http request
    * @param {*} cam is the rover (string)
