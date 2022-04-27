@@ -1,22 +1,25 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
+import PropTypes from "prop-types";
 import React, { useState } from "react";
-import "../style/Login.css";
 import { useNavigate } from "react-router-dom";
+// const bcrypt = require("bcryptjs");
 
-const UserAccount = () => {
+function UserNamePasswordEdit(props) {
   const [inputUserName, setInputUserName] = useState("");
   const [inputPassword, setInputPassword] = useState("");
-  const [status, setStatus] = useState("login");
   const navigate = useNavigate();
 
-  console.log(status);
   let button_text = "";
-  if (status === "register") button_text = "Register";
-  else if (status === "login") button_text = "Login";
+  if (props.status === "register") button_text = "Register";
+  else if (props.status === "login") button_text = "Login";
 
   const register = (accountInfoObj) => {
     // Skip if empty or only containing spaces
-    if (!accountInfoObj.userName || /^\s*$/.test(accountInfoObj.userName)) {
+    if (
+      !accountInfoObj.userName ||
+      /^\s*$/.test(
+        accountInfoObj.userName || !accountInfoObj.userName.includes("@")
+      )
+    ) {
       alert("User Name is Not Given!");
       return;
     }
@@ -92,61 +95,41 @@ const UserAccount = () => {
       password: inputPassword,
     };
 
-    if (status === "register") register(accountInfoObj);
-    else if (status === "login") login(accountInfoObj);
+    if (props.status === "register") register(accountInfoObj);
+    else if (props.status === "login") login(accountInfoObj);
 
     setInputUserName("");
     setInputPassword("");
   };
-  return (
-    <div className="UserAccount">
-      <div className="container" id="user-container">
-        <form id="user-form" onSubmit={handleSubmit}>
-          <p>Welcome</p>
-          <input
-            type="email"
-            placeholder="Email"
-            onChange={handleUserNameChange}
-            value={inputUserName}
-          />
-          <br />
-          <input
-            type="password"
-            placeholder="Password"
-            onChange={handlePasswordChange}
-            value={inputPassword}
-          />
-          <br />
-          <input type="button" onClick={handleSubmit} value="Sign In" />
-          <br />
-          <span
-            className="sign-up-place"
-            onClick={() => {
-              navigate("/SignUp", {
-                status,
-                inputUserName,
-                setInputUserName,
-                inputPassword,
-                setInputPassword,
-                setStatus,
-              });
-              setStatus("Login");
-            }}
-          >
-            Sign Up
-          </span>
-        </form>
 
-        <div className="drops">
-          <div className="drop drop-1"></div>
-          <div className="drop drop-2"></div>
-          <div className="drop drop-3"></div>
-          <div className="drop drop-4"></div>
-          <div className="drop drop-5"></div>
-        </div>
-      </div>
-    </div>
+  return (
+    <form onSubmit={handleSubmit} className="photo-form">
+      <>
+        <input
+          placeholder="Enter User Name Here"
+          value={inputUserName}
+          onChange={handleUserNameChange}
+          name="text"
+          className="foodname-input"
+        />
+        <input
+          placeholder="Enter Password Here"
+          value={inputPassword}
+          onChange={handlePasswordChange}
+          name="text"
+          className="foodname-input"
+        />
+      </>
+      <br />
+      <button onClick={handleSubmit} className="login-button">
+        {button_text}
+      </button>
+    </form>
   );
+}
+
+UserNamePasswordEdit.propTypes = {
+  status: PropTypes.string,
 };
 
-export default UserAccount;
+export default UserNamePasswordEdit;

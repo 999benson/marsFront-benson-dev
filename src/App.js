@@ -10,6 +10,7 @@ import Spirit from "./components/Spirit";
 import Curiosity from "./components/Curiosity";
 import Landing from "./pages/Landing";
 import Fave from "./pages/Fave";
+import SignUp from "./pages/SignUp";
 
 function App() {
   let [faveIdToImage, setFaveIdToImage] = useState(new Map());
@@ -61,6 +62,7 @@ function App() {
           <Route path="/Curiosity" element={<Curiosity />} />
           <Route path="/Spirit" element={<Spirit />} />
           <Route path="/Login" element={<UserAccount />} />
+          <Route path="/SignUp" element={<SignUp />} />
         </Routes>
       </BrowserRouter>
     </div>

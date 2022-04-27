@@ -1,14 +1,20 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
-import React, { useState } from "react";
+import React from "react";
 import "../style/Login.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
+import { BiLeftArrowAlt } from "react-icons/bi";
 
-const UserAccount = () => {
-  const [inputUserName, setInputUserName] = useState("");
-  const [inputPassword, setInputPassword] = useState("");
-  const [status, setStatus] = useState("login");
+function SignUp() {
   const navigate = useNavigate();
-
+  const location = useLocation();
+  const {
+    status,
+    inputUserName,
+    setInputUserName,
+    inputPassword,
+    setInputPassword,
+    setStatus,
+  } = location;
   console.log(status);
   let button_text = "";
   if (status === "register") button_text = "Register";
@@ -69,7 +75,7 @@ const UserAccount = () => {
       localStorage.clear();
       localStorage.setItem("user", accountInfoObj.userName);
       alert("Successfully Logged in!");
-      navigate("/photo");
+      navigate("/Home");
     } else {
       alert("Wrong Password!");
     }
@@ -117,23 +123,17 @@ const UserAccount = () => {
             value={inputPassword}
           />
           <br />
-          <input type="button" onClick={handleSubmit} value="Sign In" />
+          <input type="button" onClick={handleSubmit} value="Sign Up" />
           <br />
           <span
-            className="sign-up-place"
             onClick={() => {
-              navigate("/SignUp", {
-                status,
-                inputUserName,
-                setInputUserName,
-                inputPassword,
-                setInputPassword,
-                setStatus,
-              });
+              navigate("/Login");
               setStatus("Login");
             }}
+            className="back-to-login"
           >
-            Sign Up
+            <BiLeftArrowAlt />
+            Back to Login
           </span>
         </form>
 
@@ -147,6 +147,14 @@ const UserAccount = () => {
       </div>
     </div>
   );
-};
+}
 
-export default UserAccount;
+SignUp.propTypes = {
+  inputUserName: PropTypes.any.isRequired,
+  setInputUserName: PropTypes.any,
+  inputPassword: PropTypes.any,
+  setInputPassword: PropTypes.any,
+  status: PropTypes.any,
+  setStatus: PropTypes.any,
+};
+export default SignUp;

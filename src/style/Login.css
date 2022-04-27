@@ -158,4 +158,9 @@ button:focus {
   outline: none;
 }
 
+.back-to-login,.sign-up-place{
+  cursor: pointer;
+}
+
+
 /*# sourceMappingURL=Login.css.map */
